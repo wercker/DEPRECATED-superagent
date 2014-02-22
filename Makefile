@@ -33,12 +33,12 @@ lib-cov:
 	jscoverage lib lib-cov
 
 superagent.js: components
-	@component build \
+	@./node_modules/.bin/component build \
 	  --standalone superagent \
 	  --out . --name superagent
 
 components:
-	component install
+	@./node_modules/.bin/component install
 
 docs: test-docs
 
