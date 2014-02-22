@@ -2,5 +2,11 @@ language: node_js
 node_js:
   - "0.11"
   - "0.10"
-  - "0.90"
   - "0.8"
+script:
+  - make test
+  - make test-sauce
+env:
+  global:
+    - secure: 'A8+K4aizZnLNQsucVslsubwsBoGELHX8PiT68hCcrpyYYjUA7paMCAlBqXjMZRNesh1uXUx5d5AtHtpAm3fIU3WhIMfpQOH8OnoDdaLvSTITNh2N9cFAkHX+xuuwcTqLVFZcQE04RJkfJF6Hb5bjY979pu5HIa41eTwbq4PhPCY='
+    - secure: 'c8nSQqt5e9iJWj+l0N1bhiQr+lKmIzGGWmDfe3CJbAAGn6AkMUd4WYpuZMdtKS2+8DLWx+3Fbm2TeLx9tJ+uA3Jb/jdUQnM2AQrArmyG41UgWAsbgaVM6/Rh+BBgFDhhAkUErDLjV6kTdOieW4nNpZPoNem4Fi/UULGmZuoHgAU='

@@ -78,27 +78,23 @@ request.post('/api/pet', cat, function(error, res){
 });
 ```
 
-## Running node tests
+## Running tests
 
   Install dependencies:
 
      $ npm install
 
-  Run em!
+  Run them in node
 
     $ make test
 
-## Running browser tests
+  Run them in the browser
 
- Install the test server deps (nodejs / express):
+    $ make test-browser
 
-    $ npm install
+  Run them in phantomjs
 
- Start the test server:
-
-    $ make test-server
-
- Visit `localhost:4000/` in the browser.
+    $ make test-phantom
 
 ## Browser build
 

@@ -12,6 +12,20 @@ test:
 		--growl \
 		$(TESTS)
 
+test-browser: superagent.js
+	@./node_modules/.bin/zuul \
+		--local 18080 \
+		-- test/index.js
+
+test-phantom: superagent.js
+	@./node_modules/.bin/zuul \
+		-- phantom \
+		-- test/index.js
+
+test-sauce: superagent.js
+	@./node_modules/.bin/zuul \
+		-- test/index.js
+
 test-cov: lib-cov
 	SUPERAGENT_COV=1 $(MAKE) test REPORTER=html-cov > coverage.html
 
@@ -26,9 +40,6 @@ superagent.js: components
 components:
 	component install
 
-test-server:
-	@node test/server
-
 docs: test-docs
 
 test-docs:
@@ -39,4 +50,4 @@ test-docs:
 clean:
 	rm -fr superagent.js components
 
-.PHONY: test-cov test docs test-docs clean
+.PHONY: test-cov test docs test-docs clean test-browser
